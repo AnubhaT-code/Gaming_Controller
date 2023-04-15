@@ -1,0 +1,28 @@
+#include <IRremote.h>
+
+const int RECV_PIN = A2;
+
+decode_results results;
+
+void setup()
+{
+  Serial.begin(9600);
+  IrReceiver.begin(RECV_PIN);
+}
+
+// void loop() {
+//   if (IrReceiver.decode()) {
+//     long int val = IrReceiver.decodedIRData;
+//     Serial.println(val);
+//     IrReceiver.resume(); // Receive the next value
+//   }
+// }
+
+void loop() {
+  if (IrReceiver.decode()) {  
+    uint32_t rawdata = IrReceiver.decodedIRData.decodedRawData;
+    // IrReceiver.printIRResultAsCVariables(&Serial);
+    Serial.println(rawdata,HEX);
+  }
+  IrReceiver.resume();
+}
