@@ -12,7 +12,7 @@ Note:
 We need to change the pathname of files in the code as required. 
 Also remote codes need to be written for respective remotes at appropriate locations.
 
-Group Numbers:
+Group Members:
 
 https://github.com/AnubhaT-code
 
